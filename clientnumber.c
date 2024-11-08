@@ -59,7 +59,7 @@ int main(int argc, char const *argv[]) {
 
         // Получение ответа от сервера
         memset(buffer, 0, BUFFER_SIZE);
-        read(sock, buffer, BUFFER_SIZE);
+        recv(sock, buffer, BUFFER_SIZE, 0);
         printf("%s", buffer);
 
         // Завершение игры, если угадали число
