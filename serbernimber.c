@@ -67,7 +67,7 @@ int main() {
         
         while (1) {
             memset(buffer, 0, BUFFER_SIZE);
-            int read_size = read(new_socket, buffer, BUFFER_SIZE);
+            int read_size = recv(new_socket, buffer, BUFFER_SIZE, 0);
             if (read_size <= 0) {
                 log_message(client_address, "Отключение");
                 close(new_socket);
